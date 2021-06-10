@@ -10,13 +10,11 @@ function Routes() {
   return(
     <BrowserRouter>
       <Switch>
-        <Route path="/signin" component={SignIn} />
+        <Route path="/" exact component={SignIn} />
         <Route path="/characters" exact component={Characters} />
         <Route path="/movies" exact component={Movies} />
         <Route path="/hqs" exact component={HQs} />
 
-        {/* <Route path="/orphanages/create" component={CreateOrphanage} /> */}
-        {/* <Route path="/orphanages/:id" component={Orphanage} /> */}
       </Switch>
     </BrowserRouter>
     

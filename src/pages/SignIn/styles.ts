@@ -59,11 +59,14 @@ export const FormContainer = styled.div`
   }
   button {
     font-size: 1.75rem;
-    color: var(--white);
     background-color: var(--red);
     height: 4rem;
     border: none;
     border-radius: 3rem;
+    a{
+      text-decoration: none;
+      color: var(--white);
+    }
   }
   p {
     font-size: 1rem;
@@ -79,6 +82,10 @@ export const ImgContainer = styled.div`
   overflow: hidden;
 
   img {
+    width: 110%;
+    height: 110%;
+    overflow: hidden;
+    object-fit:cover ;
     -webkit-mask-image: linear-gradient(to right, transparent 2%, black);
   }
 `;

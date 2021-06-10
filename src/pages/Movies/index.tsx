@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Navbar } from "../../components/Navbar";
 import { SelfCarousel } from "../../components/SelfCarousel";
-import { apiMCU } from "../../services/api";
+import { StateShape } from "../../store/ducks/reducer";
+import { getAllMovies } from "../../store/fetchActions";
 import { HomeContainer } from "../Characters/styles";
 
 type MovieShape = {
@@ -16,29 +18,33 @@ type MovieShape = {
   // chronology: number;
 };
 
-
 export function Movies() {
-  const [movies, setMovies] = useState<MovieShape[]>([]);
+  const movies = useSelector<StateShape, StateShape["movies"]>(
+    (state) => state.movies
+  );
+  const dispatch = useDispatch();
+  // const [movies, setMovies] = useState<MovieShape[]>([]);
 
   useEffect(() => {
-    apiMCU.get("movies").then((response) => {
-      const moviesvariables = response.data.data.map(
-        (mov: {
-          id: number;
-          title: string;
-          overview: string;
-          cover_url: string;
-        }) => {
-          return {
-            id: String(mov.id),
-            name: mov.title,
-            description: mov.overview,
-            path: mov.cover_url,
-          };
-        }
-      );
-      setMovies(moviesvariables);
-    });
+    dispatch(getAllMovies());
+    // apiMCU.get("movies").then((response) => {
+    //   const moviesvariables = response.data.data.map(
+    //     (mov: {
+    //       id: number;
+    //       title: string;
+    //       overview: string;
+    //       cover_url: string;
+    //     }) => {
+    //       return {
+    //         id: String(mov.id),
+    //         name: mov.title,
+    //         description: mov.overview,
+    //         path: mov.cover_url,
+    //       };
+    //     }
+    //   );
+    //   setMovies(moviesvariables);
+    // });
   }, []);
 
   return (

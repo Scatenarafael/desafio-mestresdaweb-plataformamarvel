@@ -29,7 +29,7 @@ export function Navbar() {
 
         <li>
           <img src="/user.svg" alt="user" />
-          <Link to="/signin">Sair</Link>
+          <Link to="/">Sair</Link>
         </li>
       </ul>
     </NavContainer>

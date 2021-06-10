@@ -8,6 +8,7 @@ type CardContent = {
   name: string;
   description: string;
   path: string;
+  participations?: string[];
 };
 
 interface SelfCarouselProps {
@@ -17,19 +18,19 @@ interface SelfCarouselProps {
 export function SelfCarousel(individualContent: SelfCarouselProps) {
   console.log(individualContent);
   const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 5,
+    tv: {
+      breakpoint: { max: 3000, min: 1200 },
+      items: 4,
       slidesToSlide: 3, // optional, default to 1.
     },
     tablet: {
-      breakpoint: { max: 1400, min: 464 },
-      items: 3,
-      slidesToSlide: 2, // optional, default to 1.
+      breakpoint: { max: 1200, min: 700 },
+      items: 2,
+      slidesToSlide: 1, // optional, default to 1.
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 2,
+      breakpoint: { max: 700, min: 0 },
+      items: 1,
       slidesToSlide: 1, // optional, default to 1.
     },
   };
@@ -44,7 +45,6 @@ export function SelfCarousel(individualContent: SelfCarouselProps) {
         centerMode={false}
         className="slider"
         containerClass="container-with-dots"
-        dotListClass="dots"
         draggable
         focusOnSelect={false}
         infinite
@@ -61,10 +61,10 @@ export function SelfCarousel(individualContent: SelfCarouselProps) {
               name={content.name}
               url={content.path}
               description={content.description}
+              participations={content.participations}
             />
           );
         })}
-
       </Carousel>
     </CarouselContainer>
   );

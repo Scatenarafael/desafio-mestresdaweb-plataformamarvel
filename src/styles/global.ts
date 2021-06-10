@@ -16,10 +16,10 @@ export const GlobalStyle = createGlobalStyle`
   }
   html{
     @media (max-width:1080px){
-      font-size: 93.75%;
+      font-size: 87.5%;
     }
     @media (max-width:720px){
-      font-size: 87.5%;
+      font-size: 75%;
     }
   }
   body{
@@ -47,6 +47,31 @@ export const GlobalStyle = createGlobalStyle`
 
   button{ 
     cursor: pointer;
+  }
+
+  .react-modal-overlay{
+    background: rgba(0,0,0,0.5);
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+  .react-modal-content{
+    padding:0;
+    margin-left: 8rem;
+    margin-bottom: 5rem;
+    width: 100%;
+    max-width: 41.2rem;
+    height: 27.5rem;
+    border-radius: 2rem;
+    background: linear-gradient(45deg, rgba(0, 0, 0,0.85), var(--red));
+    position: relative;
   }
 
   `;

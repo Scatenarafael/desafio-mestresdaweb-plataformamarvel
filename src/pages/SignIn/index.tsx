@@ -17,12 +17,12 @@ export function SignIn() {
               <input type="radio" />
               <span>Salvar login</span>
             </div>
-            <a href="/">Esqueci a senha</a>
+            <a href="/characters">Esqueci a senha</a>
           </div>
-          <button type="submit">Entrar</button>
+          <button type="button"><a href="/characters">Entrar</a></button>
         </form>
         <p>
-          Ainda não tem o login? <a href="/">Cadastre-se</a>
+          Ainda não tem o login? <a href="/characters">Cadastre-se</a>
         </p>
       </FormContainer>
       <ImgContainer>

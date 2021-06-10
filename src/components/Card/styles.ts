@@ -3,8 +3,7 @@ import styled from "styled-components";
 export const ImgBackground = styled.div`
   height: 27.5rem;
   width: 18rem;
-  background-image: url(${(props: { imgBackground: string }) =>
-    props.imgBackground});
+  background-image: url(${(props: { imgBackground: string }) => props.imgBackground});
   background-position: center;
   border-radius: 2rem;
 
@@ -50,8 +49,14 @@ export const ImgBackground = styled.div`
       position: absolute;
       bottom: 0;
       padding-bottom: 1rem;
-      a {
-        text-decoration: none;
+      button {
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
         color: var(--white);
         font-family: "Axiforma Fina", sans-serif;
         font-size: 1.25rem;
@@ -59,3 +64,4 @@ export const ImgBackground = styled.div`
     }
   }
 `;
+

@@ -1,14 +1,53 @@
 import styled from "styled-components";
 
 export const NavContainer = styled.nav`
+  @media (max-width: 1200px) {
+    padding:0;
+    height: 100vh;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid var(--red);
+    img {
+      width: 7rem;
+      margin-bottom: 5rem;
+    }
+
+    ul {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      li {
+        width: 100%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        a {
+          padding: 0;
+          margin: 0;
+          width: 100%;
+        }
+        img {
+          display: none;
+        }
+      }
+    }
+  }
   display: flex;
   height: 8rem;
   justify-content: space-between;
   border-bottom: 1px solid var(--red);
-  padding: 2rem 10rem 0.2rem 3rem;
-  
-  /* padding-left: 3rem; */
-  /* padding-right: 10rem; */
+  padding: 2rem 5rem 0.2rem 3rem;
 
   img {
     width: 7.62rem;
